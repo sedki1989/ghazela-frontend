@@ -28,9 +28,13 @@ Add new Customer
 
 ![alt text](https://i.ibb.co/m5p86Bm/Capture3.jpg)
 
+List of customers with pagination system
+
 after add customer, click the (0) invoice to display the invoice page and add invoice
 
 ![alt text](https://i.ibb.co/LNFgxDD/Capture4.jpg)
+
+List of invoices with pagination system
 
 ![alt text](https://i.ibb.co/mJRRFXt/Capture5.jpg)
 
