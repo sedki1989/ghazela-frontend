@@ -15,7 +15,7 @@ Installation
 
  
 this is the login page
-login with one of users in DATABASE (password for all users "password") or create new account
+, we can login with one of users in DATABASE (password for all users "password") or create new account
 
 ![alt text](https://i.ibb.co/rdwfMLz/Capture1.jpg)
 
