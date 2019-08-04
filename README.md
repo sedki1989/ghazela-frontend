@@ -11,7 +11,8 @@ Installation
 2. Run npm install for installing dependencies
 
   cd to the project directory
-  and run ng serve
+  and run npm start
+
  
 this is the login page
 login with one of users in DATABASE (password for all users "password") or create new account
