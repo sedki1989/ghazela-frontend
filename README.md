@@ -40,3 +40,4 @@ Add new invoice
 
 ![alt text](https://i.ibb.co/nDr7Yvr/Capture7.jpg)
 
+we can also delete or add customer and invoice
