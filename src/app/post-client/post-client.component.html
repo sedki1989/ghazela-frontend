@@ -2,16 +2,16 @@
 <div mat-dialog-content>
   <form class="example-form" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput placeholder="Nom" type="text" required [(ngModel)]="client.firstName" name="firstname">
+      <input matInput placeholder="firstname" type="text" required [(ngModel)]="client.firstName" name="firstname">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Prenom" type="text" required [(ngModel)]="client.lastName" name="lastname">
+      <input matInput placeholder="lastname" type="text" required [(ngModel)]="client.lastName" name="lastname">
     </mat-form-field>
     <mat-form-field>
        <input matInput placeholder="Email" type="email" required [(ngModel)]="client.email" name="email">
     </mat-form-field>
     <mat-form-field>
-       <input matInput placeholder="Societe" type="text" required [(ngModel)]="client.company" name="company">
+       <input matInput placeholder="company" type="text" required [(ngModel)]="client.company" name="company">
     </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Save</button>
   </form>
