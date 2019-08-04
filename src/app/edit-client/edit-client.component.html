@@ -1,11 +1,11 @@
 <h1 mat-dialog-title>{{data.s}}</h1>
 <div mat-dialog-content>
-  <form class="example-form" (ngSubmit)="onSubmit()">
+  <form class="example-form" #f (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput placeholder="firstname" type="text" required [(ngModel)]="client.firstName" value="{{data.c.lastName}}" name="firstname">
+      <input matInput placeholder="firstName" type="text" required [(ngModel)]="client.firstName" value="{{data.c.lastName}}" name="firstname">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="lastname" type="text" required [(ngModel)]="client.lastName" name="lastname">
+      <input matInput placeholder="lastName" type="text" required [(ngModel)]="client.lastName" name="lastname">
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Email" type="email" required [(ngModel)]="client.email" name="email">
@@ -13,7 +13,7 @@
     <mat-form-field>
       <input matInput placeholder="company" type="text" required [(ngModel)]="client.company" name="company">
     </mat-form-field>
-    <button mat-raised-button type="submit" color="primary">Save</button>
+    <button mat-raised-button type="submit" [disabled]="!f.checkValidity()" color="primary">Save</button>
   </form>
 </div>
 <div mat-dialog-actions>
