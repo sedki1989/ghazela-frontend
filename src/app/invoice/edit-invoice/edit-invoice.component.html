@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{data.s}}</h1>
+<div mat-dialog-content>
+  <form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Amount" type="number" required [(ngModel)]="invoice.amount" value="{{data.i.amount}}" name="amount">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" readonly [(ngModel)]="invoice.sentAt" value="{{data.i.sentAt}}" name="sentAt">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Invoice State</mat-label>
+      <mat-select [(ngModel)]="invoice.status" value={{data.i.status}} name="status">
+        <mat-option *ngFor="let state of status" [value]="state.value">
+          {{state.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Save</button>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
+</div>

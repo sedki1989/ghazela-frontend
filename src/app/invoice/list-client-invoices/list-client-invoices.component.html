@@ -1,0 +1,70 @@
+<div>
+  <br>
+  <div class="container">
+    <div class="container">
+      <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row"  fxLayoutAlign="space-around center" class="content">
+        <div class="blocks">
+          <button button="submit" mat-raised-button color="primary" (click)="openDialog()">
+            <mat-icon>add</mat-icon> Add Invoice
+          </button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center" class="content">
+        <mat-card class="card" >
+          <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+            <h3>List of invoices for {{client}}</h3>
+          </mat-card-title>
+          <mat-card-content>
+            <div class="example-container mat-elevation-z8">
+              <mat-table #table [dataSource]="invoices">
+                <ng-container matColumnDef="Number">
+                  <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="Send Date">
+                  <mat-header-cell *matHeaderCellDef> Send Date </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.sentAt | date }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="State">
+                  <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="Amount">
+                  <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="delete">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <a
+                            type="button" (click)="onDeleteInvoice(element.id)">
+                      <mat-icon class="icon">delete</mat-icon>
+                    </a>
+                  </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="edit">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <a
+                            type="button" (click)="onEditInvoice(element)">
+                      <mat-icon class="icon">edit</mat-icon>
+                    </a>
+                  </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+
+              <mat-paginator [length]="invoicesSize" [pageSize]="5"
+                             [pageSizeOptions]="[3, 5, 10]"></mat-paginator>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

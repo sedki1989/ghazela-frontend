@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-loader></app-loader>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+   <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item routerLink="/" >
+        <mat-icon routerLink="/">home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item *ngIf="isAuthenticated()" routerLink="/clients">
+        <mat-icon>people_outline</mat-icon>
+        <span>Customers</span>
+      </button>
+      <button mat-menu-item *ngIf="isAuthenticated()" routerLink="/" (click)="logout()">
+        <mat-icon >exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+    <a  mat-button  routerLink="/">GHAZELA</a>
+  </span>
+    <!--  <span>HOME</span> -->
+
+    <span class="spacer"></span>
+    <a  *ngIf="isAuthenticated()" mat-button >{{name}}</a>
+    <a  *ngIf="!isAuthenticated()" mat-button  routerLink="/register">Register</a>
+    <a  *ngIf="!isAuthenticated()" mat-button  routerLink="/login">Login</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

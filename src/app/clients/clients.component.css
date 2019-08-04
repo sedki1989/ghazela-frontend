@@ -1,0 +1,47 @@
+.card {
+    min-width: 80%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+a {
+    cursor: pointer;
+}
+.mat-table__wrapper .mat-table {
+    min-width: auto !important;
+    width: 100% !important;
+}
+
+.mat-header-row {
+    width: 100%;
+}
+
+.mat-row {
+    width: 100%;
+}
+.mat-column-delete {
+    flex: 0 0 5% !important;
+    min-width: 20px !important;
+}
+.mat-column-edit {
+    flex: 0 0 2% !important;
+    min-width: 2px !important;
+}
+.mat-column-invoices {
+    flex: 0 0 9% !important;
+    min-width: 2px !important;
+}
+.mat-column-Montant {
+    flex: 0 0 7% !important;
+    min-width: 2px !important;
+}
